@@ -57,7 +57,9 @@ fun CreatePassword(navHost: NavHostController)
     var num3 by remember { mutableStateOf("") }
     var num4 by remember { mutableStateOf("") }
 
-    Column(modifier = Modifier.fillMaxSize(1f)) {
+    Column(modifier = Modifier.fillMaxSize(1f)
+        .background(Color.White))
+    {
         var flag = remember {
             mutableStateOf(false)
         }
@@ -65,7 +67,6 @@ fun CreatePassword(navHost: NavHostController)
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxSize(1F)
-                .background(Color.White)
                 .padding(bottom = 50.dp)
         ) {
             Column(horizontalAlignment = Alignment.End,
@@ -83,7 +84,7 @@ fun CreatePassword(navHost: NavHostController)
                 {
                     Text(
                         text = "Пропустить",
-                        fontSize = 20.sp,
+                        fontSize = 15.sp,
                         textAlign = TextAlign.Center,
                         color = Color(0xFF1A6FEE)
                     )
@@ -99,7 +100,8 @@ fun CreatePassword(navHost: NavHostController)
                     text = "Создайте пароль",
                     fontSize = 32.sp,
                     fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = Color.Black
                 )
                 Text(
                     text = "Для защиты ваших персональных данных",
@@ -127,18 +129,13 @@ fun CreatePassword(navHost: NavHostController)
                             shape = RoundedCornerShape(10.dp)
                         )
                         .height(16.dp)
-                        .width(16.dp),singleLine = true,
-                    colors = TextFieldDefaults.textFieldColors(
-                        containerColor = Color.Transparent,
-                        focusedIndicatorColor = Color.Transparent,
-                        unfocusedIndicatorColor = Color.Transparent,
-                        unfocusedTextColor = Color.Black),
-                    textStyle = TextStyle(textAlign = TextAlign.Center)
+                        .width(16.dp),
+                    textStyle = TextStyle(textAlign = TextAlign.Center),
+                    enabled = false
                 )
-
                 Spacer(modifier = Modifier.width(20.dp))
-                OutlinedTextField(value = num1,
-                    onValueChange = {num1 = it.take(1)},
+                OutlinedTextField(value = num2,
+                    onValueChange = {num2 = it.take(1)},
                     modifier = Modifier
                         .border(
                             width = 1.dp,
@@ -146,18 +143,13 @@ fun CreatePassword(navHost: NavHostController)
                             shape = RoundedCornerShape(10.dp)
                         )
                         .height(16.dp)
-                        .width(16.dp),singleLine = true,
-                    colors = TextFieldDefaults.textFieldColors(
-                        containerColor = Color.Transparent,
-                        focusedIndicatorColor = Color.Transparent,
-                        unfocusedIndicatorColor = Color.Transparent,
-                        unfocusedTextColor = Color.Black),
-                    textStyle = TextStyle(textAlign = TextAlign.Center)
+                        .width(16.dp),
+                    textStyle = TextStyle(textAlign = TextAlign.Center),
+                    enabled = false
                 )
-
                 Spacer(modifier = Modifier.width(20.dp))
-                OutlinedTextField(value = num1,
-                    onValueChange = {num1 = it.take(1)},
+                OutlinedTextField(value = num3,
+                    onValueChange = {num3 = it.take(1)},
                     modifier = Modifier
                         .border(
                             width = 1.dp,
@@ -165,18 +157,13 @@ fun CreatePassword(navHost: NavHostController)
                             shape = RoundedCornerShape(10.dp)
                         )
                         .height(16.dp)
-                        .width(16.dp),singleLine = true,
-                    colors = TextFieldDefaults.textFieldColors(
-                        containerColor = Color.Transparent,
-                        focusedIndicatorColor = Color.Transparent,
-                        unfocusedIndicatorColor = Color.Transparent,
-                        unfocusedTextColor = Color.Black),
-                    textStyle = TextStyle(textAlign = TextAlign.Center)
+                        .width(16.dp),
+                    textStyle = TextStyle(textAlign = TextAlign.Center),
+                    enabled = false
                 )
-
                 Spacer(modifier = Modifier.width(20.dp))
-                OutlinedTextField(value = num1,
-                    onValueChange = {num1 = it.take(1)},
+                OutlinedTextField(value = num4,
+                    onValueChange = {num4 = it.take(1)},
                     modifier = Modifier
                         .border(
                             width = 1.dp,
@@ -184,13 +171,9 @@ fun CreatePassword(navHost: NavHostController)
                             shape = RoundedCornerShape(10.dp)
                         )
                         .height(16.dp)
-                        .width(16.dp),singleLine = true,
-                    colors = TextFieldDefaults.textFieldColors(
-                        containerColor = Color.Transparent,
-                        focusedIndicatorColor = Color.Transparent,
-                        unfocusedIndicatorColor = Color.Transparent,
-                        unfocusedTextColor = Color.Black),
-                    textStyle = TextStyle(textAlign = TextAlign.Center)
+                        .width(16.dp),
+                    textStyle = TextStyle(textAlign = TextAlign.Center),
+                    enabled = false
                 )
             }
             Column(
@@ -332,17 +315,10 @@ fun CreatePassword(navHost: NavHostController)
                 )
                 {
                     Button(
-                        shape = RoundedCornerShape(50.dp),
                         onClick = {},
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color.Transparent,
-                            contentColor = Color.Transparent
-                        ),
-                        modifier = Modifier.size(90.dp)
-                    )
-                    {
-                        Text("7", fontSize = 32.sp)
-                    }
+                        modifier = Modifier.size(107.dp),
+                        enabled = false
+                    ){}
                     Button(
                         shape = RoundedCornerShape(50.dp),
                         onClick = {},

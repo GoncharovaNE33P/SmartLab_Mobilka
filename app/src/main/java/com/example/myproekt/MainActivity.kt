@@ -42,28 +42,14 @@ class MainActivity : ComponentActivity()
         super.onCreate(savedInstanceState)
         setContent {
             MyProektTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
-                ) {
+                )
+                {
                     Navigation(viewModelSmart)
                 }
+
             }
         }
     }
 }
-@Composable
-fun SendCodeToEmail(viewModel: ViewModelMain) {
-    val email = remember { mutableStateOf("") }
-    Column(
-        Modifier.padding(top = 10.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    )
-    {
-        TextField(value = email.value, onValueChange = { newtext -> email.value = newtext })
-        Button(onClick = { viewModel.sendCodeToEmail(email.value) }) {
-            Text(text = "Send code to email")
-        }
-    }
-}
-

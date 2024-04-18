@@ -32,7 +32,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
@@ -42,6 +41,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.compose.ui.graphics.Color
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -80,7 +80,8 @@ fun EmailCode(navHost: NavHostController) {
         {
             Icon(
                 imageVector = Icons.Default.KeyboardArrowLeft,
-                contentDescription = "ArrowBack Icon"
+                contentDescription = "ArrowBack Icon",
+                tint = Color.Black
             )
         }
     }
@@ -93,7 +94,7 @@ fun EmailCode(navHost: NavHostController) {
     {
         Text(
             text = "Введите код из E-mail", fontWeight = FontWeight.Bold, fontSize = 24.sp,
-            modifier = Modifier.padding(top = 240.dp)
+            modifier = Modifier.padding(top = 240.dp), color = Color.Black
         )
         Row(
             modifier = Modifier
@@ -110,7 +111,7 @@ fun EmailCode(navHost: NavHostController) {
                     .border(
                         width = 1.dp,
                         color = Color(0xFFEBEBEB),
-                        shape = RoundedCornerShape(10.dp)
+                        shape = RoundedCornerShape(5.dp)
                     )
                     .height(54.dp)
                     .width(54.dp),singleLine = true,
@@ -118,10 +119,11 @@ fun EmailCode(navHost: NavHostController) {
                     containerColor = Color(0xFFF5F5F9),
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    unfocusedTextColor = Color.Black),
+                    unfocusedTextColor = Color.Black,
+                    focusedTextColor = Color.Black),
                 textStyle = TextStyle(textAlign = TextAlign.Center),
-                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number,imeAction = ImeAction.Done))
-
+                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number,imeAction = ImeAction.Done)
+            )
             Spacer(modifier = Modifier.width(20.dp))
             OutlinedTextField(value = num2,
                 onValueChange = {num2 = it.take(1)},
@@ -129,7 +131,7 @@ fun EmailCode(navHost: NavHostController) {
                     .border(
                         width = 1.dp,
                         color = Color(0xFFEBEBEB),
-                        shape = RoundedCornerShape(10.dp)
+                        shape = RoundedCornerShape(5.dp)
                     )
                     .height(54.dp)
                     .width(54.dp),singleLine = true,
@@ -137,9 +139,11 @@ fun EmailCode(navHost: NavHostController) {
                     containerColor = Color(0xFFF5F5F9),
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    unfocusedTextColor = Color.Black),
+                    unfocusedTextColor = Color.Black,
+                    focusedTextColor = Color.Black),
                 textStyle = TextStyle(textAlign = TextAlign.Center),
-                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number,imeAction = ImeAction.Done))
+                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number,imeAction = ImeAction.Done)
+            )
 
             Spacer(modifier = Modifier.width(20.dp))
             OutlinedTextField(value = num3,
@@ -148,7 +152,7 @@ fun EmailCode(navHost: NavHostController) {
                     .border(
                         width = 1.dp,
                         color = Color(0xFFEBEBEB),
-                        shape = RoundedCornerShape(10.dp)
+                        shape = RoundedCornerShape(5.dp)
                     )
                     .height(54.dp)
                     .width(54.dp),singleLine = true,
@@ -156,9 +160,11 @@ fun EmailCode(navHost: NavHostController) {
                     containerColor = Color(0xFFF5F5F9),
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    unfocusedTextColor = Color.Black),
+                    unfocusedTextColor = Color.Black,
+                    focusedTextColor = Color.Black),
                 textStyle = TextStyle(textAlign = TextAlign.Center),
-                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number,imeAction = ImeAction.Done))
+                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number,imeAction = ImeAction.Done)
+            )
 
             Spacer(modifier = Modifier.width(20.dp))
             OutlinedTextField(value = num4,
@@ -167,7 +173,7 @@ fun EmailCode(navHost: NavHostController) {
                     .border(
                         width = 1.dp,
                         color = Color(0xFFEBEBEB),
-                        shape = RoundedCornerShape(10.dp)
+                        shape = RoundedCornerShape(5.dp)
                     )
                     .height(54.dp)
                     .width(54.dp),singleLine = true,
@@ -175,10 +181,13 @@ fun EmailCode(navHost: NavHostController) {
                     containerColor = Color(0xFFF5F5F9),
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    unfocusedTextColor = Color.Black),
+                    unfocusedTextColor = Color.Black,
+                    focusedTextColor = Color.Black
+                ),
                 textStyle = TextStyle(textAlign = TextAlign.Center),
                 keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number,imeAction = ImeAction.Done),
-                keyboardActions = KeyboardActions { code.value = "$num1$num2$num3$num4" })
+                keyboardActions = KeyboardActions { code.value = "$num1$num2$num3$num4" }
+            )
         }
         Box(
             modifier = Modifier

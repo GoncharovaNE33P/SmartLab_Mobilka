@@ -41,28 +41,31 @@ fun LogIn(navHost: NavHostController, viewModelMain: ViewModelMain)
     var email: String by rememberSaveable { mutableStateOf("") }
     var flag =  rememberSaveable { mutableStateOf(false) }
     Column (modifier = Modifier
-        .fillMaxSize(1f))
+        .fillMaxSize(1f)
+        .background(Color.White))
     {
         Text(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 50.dp, bottom = 20.dp, end = 15.dp, start = 15.dp),
             text = "✋ Добро пожаловать!",
-            fontWeight = FontWeight.Bold, fontSize = 24.sp
+            fontWeight = FontWeight.Bold, fontSize = 24.sp,
+            color = Color.Black
         )
         Text(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 30.dp, end = 15.dp, start = 15.dp),
-            text = "Войдите, чтобы пользоваться функциями приложения", fontSize = 15.sp
+            text = "Войдите, чтобы пользоваться функциями приложения", fontSize = 15.sp, color = Color.Black
         )
         Text(
             modifier = Modifier
                 .fillMaxWidth(0.9f)
-                .padding(start = 20.dp, top = 30.dp),
+                .padding(start = 25.dp, top = 30.dp, bottom = 10.dp),
             text = "Вход по E-mail", fontSize = 14.sp, color = Color.Gray
         )
-        Column(modifier = Modifier.fillMaxWidth(1f),
+        Column(modifier = Modifier
+            .padding(start = 20.dp),
             horizontalAlignment = Alignment.CenterHorizontally)
         {
             CustomEmail(search = email, onValueChange = {it->email =it})
@@ -128,15 +131,13 @@ fun CustomEmail( search: String,
 {
     Box(
         modifier = modifier
-            .padding(5.dp)
             .clip(RoundedCornerShape(10.dp))
             .background(Color(0XFFE8EFFF))
-
     )
     {
         TextField(
             modifier = Modifier
-                .fillMaxWidth(0.9f)
+                .fillMaxWidth(0.95f)
                 .border(width = 1.dp, color = Color(0XFFEBEBEB), shape = RoundedCornerShape(10.dp)),
             shape = RoundedCornerShape(10.dp),
             singleLine = true,
