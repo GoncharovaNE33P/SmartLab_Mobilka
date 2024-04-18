@@ -22,7 +22,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.myproekt.api.RepositoryImpl
 import com.example.myproekt.api.RetrofitInstance
-import com.example.myproekt.themes.ApiConnectTheme
 import com.example.myproekt.viewmodel.ViewModelMain
 import com.example.myproekt.Navigation.Navigation
 import com.example.myproekt.ui.theme.MyProektTheme
@@ -50,15 +49,6 @@ class MainActivity : ComponentActivity()
                     Navigation(viewModelSmart)
                 }
             }
-            /*ApiConnectTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    SendCodeToEmail(viewModelSmart)
-
-                }
-            }*/
         }
     }
 }

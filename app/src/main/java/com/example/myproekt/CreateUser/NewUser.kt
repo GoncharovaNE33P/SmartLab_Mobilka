@@ -1,4 +1,4 @@
-package com.example.myproekt.screen
+package com.example.myproekt.CreateUser
 
 
 import androidx.compose.foundation.BorderStroke
@@ -36,7 +36,7 @@ import com.example.myproekt.viewmodel.ViewModelMain
 
 /*@Preview*/
 @Composable
-fun LogIn(navHost: NavHostController, viewModelMain: ViewModelMain)
+fun CreateUser(navHost: NavHostController)
 {
     var email: String by rememberSaveable { mutableStateOf("") }
     var flag =  rememberSaveable { mutableStateOf(false) }
@@ -81,7 +81,6 @@ fun LogIn(navHost: NavHostController, viewModelMain: ViewModelMain)
                 contentColor = Color.White)
             Button(
                 onClick = {
-                    viewModelMain.sendCodeToEmail(email)
                     navHost.navigate("EmailCodeSreen")},
                 modifier = Modifier
                     .height(60.dp)

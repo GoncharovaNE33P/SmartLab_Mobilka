@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.myproekt.CodeEmail.EmailCode
+import com.example.myproekt.CreatePassword.CreatePassword
+import com.example.myproekt.CreateUser.CreateUser
 import com.example.myproekt.screen.LogIn
 import com.example.myproekt.viewmodel.ViewModelMain
 
@@ -14,7 +16,7 @@ import com.example.myproekt.viewmodel.ViewModelMain
 fun Navigation(viewModelMain: ViewModelMain) {
     val navController = rememberNavController()
     NavHost(navController = navController,//контроллер реагирующий и отвечающий за перемещения
-        startDestination = "logInScreen")
+        startDestination = "NewUser")
     {
         //Для каждой страницы задается route - для дальнейшего обращения к ней
         //и указывается метод для запуска с переданными параметрами
@@ -24,6 +26,12 @@ fun Navigation(viewModelMain: ViewModelMain) {
         }
         composable("EmailCodeSreen"){
             EmailCode(navController)
+        }
+        composable("PasswordSreen"){
+            CreatePassword(navController)
+        }
+        composable("NewUser"){
+            CreateUser(navController)
         }
     }
 }
